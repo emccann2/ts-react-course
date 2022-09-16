@@ -39,8 +39,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm run format`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Runs prettier on files in the project. This command is also run as part of the [build-pr workflow](.github/workflows/build-pr.yml) which runs on all Pull Requests created to merge to `main`. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run lint`
+
+Will run a `prettier --check` on all files. This command is also run as part of the [build-pr workflow](.github/workflows/build-pr.yml) which runs on all Pull Requests created to merge to `main`. 
