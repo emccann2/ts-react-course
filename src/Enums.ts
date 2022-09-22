@@ -1,7 +1,8 @@
 export enum JobRole {
-    Engineer1 = "Software Engineer",
-    Engineer2 = "Senior Software Engineer",
-    Engineer3 = "Staff Software Engineer",
+    Engineer = "Engineer",
+    QA = "QA",
+    Design = "Designer",
+    PK = "Product Knowledge",
     Manager = "Development Manager",
     Product = "Product Manager"
 }

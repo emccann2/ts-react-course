@@ -6,3 +6,10 @@ export interface Person {
     email: string;
     jobRole: JobRole;
 }
+
+export interface Options {
+    randomGenerator: string;
+    blog: string;
+    rota: string;
+    quiz: string;
+}
