@@ -1,14 +1,33 @@
-import {FC} from 'react';
+import * as React from 'react';
 import './App.css';
-import { User } from './components/Person';
-import { JobRole } from './Enums';
+import { HashRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { render } from 'react-dom';
+import { Home } from './components/Home';
+import { Generator } from './components/Generator';
+import { Rota } from './components/Rota';
 
-const App: FC = () => {
-  return (
-    <div className="App">
-      <User name="Emma" age={25} email="emma.mccann@bazaarvoice.com" jobRole={JobRole.Engineer2} />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <Link to={'/'}>Home</Link>
+            <p></p>
+            <Link to={'/random'}>Random Name Generator</Link>
+            <p></p>
+            <Link to={'/rota'}>Stand Up Rota</Link>
+            <p></p>
+          </nav>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/random' element={<Generator/>}/>
+            <Route path='/rota' element={<Rota/>}/>
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
