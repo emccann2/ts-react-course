@@ -32,6 +32,7 @@ jobs:
           npm run lint
       
       - name: Output
+        if: ${{ !env.ACT }}
         shell: bash
         run: |
           echo '### Build Summary :rocket:' >> $GITHUB_STEP_SUMMARY

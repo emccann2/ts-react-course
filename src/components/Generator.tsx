@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { useState } from 'react';
 
 export const Generator = () => {
-    let teamNames = ['Emma', 'Jamie', 'Eamonn', 'David K', 'David McC', 'Rebecca', 'Chris', 'Donall', 'Paul', 'Alan', 'Dean', 'Caoimhe', 'Oran', 'Danielle', 'Brian', 'Jason'];
-    const [name, setName] = useState<string | null>("")
+    let [name, setName] = useState<string | null>("")
     function clickMe() {
-        let randomValue = teamNames[Math.floor(Math.random() * teamNames.length)];
-        teamNames = teamNames.filter(i => i !== randomValue)
-        console.log(teamNames)
-        setName(randomValue)
+        let teamNames: string[] = ['Emma', 'Jamie', 'Eamonn', 'David K', 'David McC', 'Rebecca', 'Chris', 'Donall', 'Paul', 'Alan', 'Dean', 'Caoimhe', 'Oran', 'Danielle', 'Brian', 'Jason'];
+        let randomValue = Math.floor(Math.random() * teamNames.length); 
+        console.log("Random value: " + teamNames[randomValue])
+        const startIndex = teamNames.indexOf(teamNames[randomValue]);
+        teamNames.splice(startIndex,1);
+        console.log(teamNames);
+        setName(teamNames[randomValue])
     }
 
     const Button = styled.button`
